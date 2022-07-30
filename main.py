@@ -12,8 +12,9 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from dotenv import load_dotenv
 
-
+load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("APP_SECRET_KEY")
 ckeditor = CKEditor(app)
